@@ -9,8 +9,8 @@ Track: T3
 | Họ và tên        | Mã học viên | Việc đã làm                    |
 | ---------------- | ----------- | ------------------------------ |
 | Nguyễn Minh Quân | 2A202603510 | mục 1.2, mục 2.2, mục 4, mục 6 |
-| Nguyễn Quốc Việt | 2A202603556 | mục 2.1, mục 3                 |
-| Đàm Tuấn Linh    | 2A202603624 | mục 5                          |
+| Nguyễn Quốc Việt | 2A202603556 | mục 5                          |
+| Đàm Tuấn Linh    | 2A202603624 | mục 2.1, mục 3                 |
 
 > Khung bài nộp: giữ thông tin nhóm và dữ liệu đề bài đã có; các ô trống là nội dung nhóm chưa chốt. Hướng dẫn trong từng mục là yêu cầu cần đáp ứng, chưa phải câu trả lời của nhóm.
 >
