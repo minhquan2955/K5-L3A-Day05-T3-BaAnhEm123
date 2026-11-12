@@ -108,11 +108,11 @@ Nhóm tự tìm hiểu thêm sản phẩm thật nếu muốn (đọc trang tr�
 
 > Ít nhất 3 việc ngoài phạm vi; mỗi việc có lý do. Prototype phải tuân theo phạm vi này.
 
-| STT | Việc không làm | Lý do |
-| --- | --- | --- |
-| 1 | Không tự đổi vé khi khách chưa xác nhận rõ chuyến và hành khách. | Tool `doi_chuyen_bay` dùng lần đổi miễn phí duy nhất; nếu AI đoán sai chuyến hoặc người bay, khách mất quyền đổi miễn phí và có thể không còn chỗ trên chuyến phù hợp. Vì vậy cần xác nhận rõ trước khi đổi. |
-| 2 | Không tự gửi yêu cầu hoàn vé. | Tool `gui_yeu_cau_hoan_ve` không cho huỷ yêu cầu đã gửi; hiểu nhầm ý khách có thể khiến khách mất chỗ và phải chờ tiền hoàn tới 90 ngày theo bối cảnh đề bài. Vì vậy AI không tự gửi chỉ dựa trên suy đoán ý định của khách. |
-| 3 | Không tự đổi tên hành khách hoặc xử lý trường hợp trẻ nhỏ bay một mình. | Bộ tool của track không có chức năng đổi tên hoặc xử lý trẻ bay một mình; đề bài yêu cầu chuyển các ca này cho nhân viên. Tự xử lý hoặc hứa đã xử lý sẽ vượt khả năng của hệ thống, có thể khiến khách tưởng vé đã hợp lệ và lỡ chuyến. |
+| STT | Việc không làm                                                          | Lý do                                                                                                                                                                                                                                   |
+| --- | ----------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | Không tự đổi vé khi khách chưa xác nhận rõ chuyến và hành khách.        | Tool `doi_chuyen_bay` dùng lần đổi miễn phí duy nhất; nếu AI đoán sai chuyến hoặc người bay, khách mất quyền đổi miễn phí và có thể không còn chỗ trên chuyến phù hợp. Vì vậy cần xác nhận rõ trước khi đổi.                            |
+| 2   | Không tự gửi yêu cầu hoàn vé.                                           | Tool `gui_yeu_cau_hoan_ve` không cho huỷ yêu cầu đã gửi; hiểu nhầm ý khách có thể khiến khách mất chỗ và phải chờ tiền hoàn tới 90 ngày theo bối cảnh đề bài. Vì vậy AI không tự gửi chỉ dựa trên suy đoán ý định của khách.            |
+| 3   | Không tự đổi tên hành khách hoặc xử lý trường hợp trẻ nhỏ bay một mình. | Bộ tool của track không có chức năng đổi tên hoặc xử lý trẻ bay một mình; đề bài yêu cầu chuyển các ca này cho nhân viên. Tự xử lý hoặc hứa đã xử lý sẽ vượt khả năng của hệ thống, có thể khiến khách tưởng vé đã hợp lệ và lỡ chuyến. |
 
 ## §2. Kịch bản rủi ro
 
@@ -135,11 +135,11 @@ Nhóm tự tìm hiểu thêm sản phẩm thật nếu muốn (đọc trang tr�
 
 ### 2.2. Chọn hai kịch bản có cái giá khi sai cao nhất
 
-| Lựa chọn                | Mã kịch bản | Ai chịu thiệt hại gì nếu AI sai | Vì sao đắt hơn các kịch bản còn lại / vì sao không chọn |
-| ----------------------- | ----------- | ------------------------------- | ------------------------------------------------------- |
-| Kịch bản đắt nhất A     |             |                                 |                                                         |
-| Kịch bản đắt nhất B     |             |                                 |                                                         |
-| Kịch bản suýt được chọn |             |                                 |                                                         |
+| Mã kịch bản             | Ai chịu thiệt hại gì nếu AI sai                                                                                                                  | Vì sao đắt hơn các kịch bản còn lại / vì sao không chọn                                                                                                                                                                            |
+| :---------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **#4 — Chọn**           | Hai mẹ con có thể bị hủy vé ngoài ý muốn, mất phương án tiếp tục hành trình; tiền hoàn cần thời gian xử lý nên có thể phải ứng tiền mua vé khác. | **Yêu cầu hoàn đã gửi không rút lại được.** Hậu quả ảnh hưởng cả hành trình và tiền của khách; không thể khắc phục chỉ bằng sửa câu trả lời hay yêu cầu khách xác nhận lại sau đó.                                                 |
+| **#3 — Chọn**           | Khách bị đổi sang chuyến không mong muốn, mất một lần đổi miễn phí; có thể phát sinh chi phí đổi tiếp hoặc lỡ lịch cá nhân.                      | Câu “Ừ, chuyến đó đi” trông như đã đồng ý nhưng chưa rõ chuyến nào. Nếu AI thực hiện ngay, một suy đoán biến thành thao tác làm mất quyền lợi, đắt hơn các lỗi thông tin còn sửa được trước khi hành động.                         |
+| **#1 — Suýt được chọn** | Hai mẹ con nhận gợi ý chuyến chỉ còn một chỗ, không thể cùng bay; nếu tiếp tục xử lý sai có thể dẫn đến tách người lớn và trẻ nhỏ.               | Rủi ro nghiêm trọng, nhưng tin nhắn mới yêu cầu **tra cứu chuyến**, chưa yêu cầu đổi vé. Gợi ý sai còn có thể sửa trước khi thao tác; #3 và #4 trực tiếp đặt khách trước nguy cơ mất quyền lợi hoặc gửi yêu cầu không thể rút lại. |
 
 ## §3. Khi AI sai
 
