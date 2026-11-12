@@ -12,9 +12,9 @@
 
 - **Lát cắt:** Trong mục Đặt chỗ của tôi, hành khách vừa nhận tin chuyến bay bị huỷ và nhắn hỏi. AI quyết định đề xuất, giữ chỗ chuyến thay thế, hỏi lại, đổi vé hoặc chuyển nhân viên, để khách tới nơi kịp mà không mất vé hay tiền vì một thao tác khó đảo ngược.
 - **Không làm:**
-  1. Không tự đổi vé khi khách chưa xác nhận rõ chuyến và hành khách, vì đổi vé dùng lần đổi miễn phí duy nhất.
-  2. Không tự gửi yêu cầu hoàn vé, vì yêu cầu đã gửi thì không huỷ được.
-  3. Không tự đổi tên hành khách hoặc xử lý trường hợp trẻ nhỏ bay một mình, vì track yêu cầu chuyển các ca này cho nhân viên.
+    - Không tự đổi vé khi khách chưa xác nhận rõ chuyến và hành khách, vì đổi vé dùng lần đổi miễn phí duy nhất.
+    - Không tự gửi yêu cầu hoàn vé, vì yêu cầu đã gửi thì không huỷ được.
+    - Không tự đổi tên hành khách hoặc xử lý trường hợp trẻ nhỏ bay một mình, vì track yêu cầu chuyển các ca này cho nhân viên.
 
 ## §2. Kịch bản rủi ro
 
