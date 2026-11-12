@@ -1,24 +1,26 @@
 # Bài nộp LAB5 — Track: T3 · Nhóm BaAnhEm123
 
 Lớp: L3A
-Bàn / zone: ...
+Bàn / zone:
 Track: T3
 
 | Họ và tên        | Mã học viên | Việc đã làm |
 | ---------------- | ----------- | ----------- |
-| Nguyễn Minh Quân | 2A202603510 | ...         |
-| Nguyễn Quốc Việt | 2A202603556 | ...         |
-| Đàm Tuấn Linh    | 2A202603624 | ...         |
+| Nguyễn Minh Quân | 2A202603510 |             |
+| Nguyễn Quốc Việt | 2A202603556 |             |
+| Đàm Tuấn Linh    | 2A202603624 |             |
+
+> Khung bài nộp: giữ thông tin nhóm và dữ liệu đề bài đã có; các ô trống là nội dung nhóm chưa chốt. Hướng dẫn trong từng mục là yêu cầu cần đáp ứng, chưa phải câu trả lời của nhóm.
+>
+> Với mỗi quyết định, ghi đủ: phương án đã cân nhắc · phương án chọn · lý do chọn · lý do loại phương án khác. Bằng chứng cần trỏ tới tool, dữ liệu cụ thể hoặc vị trí có đánh số trên prototype.
+>
+> Tài liệu đối chiếu: [Mẫu spec chính thức](https://github.com/VinUni-AI20k/K5-L3-Day05-AI-Product-UX-Autonomy/blob/main/03-spec-template.md) · [Hướng dẫn](https://github.com/VinUni-AI20k/K5-L3-Day05-AI-Product-UX-Autonomy/blob/main/02-guide.md) · [Rubric](https://github.com/VinUni-AI20k/K5-L3-Day05-AI-Product-UX-Autonomy/blob/main/04-rubric.md).
 
 ## §1. Lát cắt & phạm vi
-- Lát cắt: Trong mục Đặt chỗ của tôi, hành khách vừa nhận tin chuyến bay bị huỷ và nhắn hỏi. AI quyết định đề xuất, giữ chỗ chuyến thay thế, hỏi lại, đổi vé hoặc chuyển nhân viên, để khách tới nơi kịp mà không mất vé hay tiền vì một thao tác khó đảo ngược.
-- Không làm:  
-1. Không tự đổi vé khi khách chưa xác nhận rõ chuyến và hành khách, vì đổi vé dùng lần đổi miễn phí duy nhất.
-2. Không tự gửi yêu cầu hoàn vé, vì yêu cầu đã gửi thì không huỷ được.
-3. Không tự đổi tên hành khách hoặc xử lý trường hợp trẻ nhỏ bay một mình, vì track yêu cầu chuyển các ca này cho nhân viên.
-# T3 — Du lịch: trợ lý đổi chuyến khi chuyến bay bị huỷ
 
-> **Cách dùng:** đọc từ trên xuống trong chặng 1 (10 phút). Sản phẩm thật chỉ để **tham khảo** cách nó chạy hôm nay; nhóm **không** chat với sản phẩm thật. Đây là bài **thiết kế**: không chạy agent, không cần chatbot. Nhóm tự lường trước AI có thể sai ở đâu từ lát cắt, bộ việc AI có thể làm và dữ liệu dựng (mục Data & fixture). Khung chung: `../01-challenge-brief.md`; các bước: `../02-guide.md`.
+### 1.1. Thông tin đề bài T3 — Du lịch: trợ lý đổi chuyến khi chuyến bay bị huỷ
+
+> **Cách dùng:** đọc từ trên xuống trong chặng 1 (10 phút). Sản phẩm thật chỉ để **tham khảo** cách nó chạy hôm nay; nhóm **không** chat với sản phẩm thật. Đây là bài **thiết kế**: không chạy agent, không cần chatbot. Nhóm tự lường trước AI có thể sai ở đâu từ lát cắt, bộ việc AI có thể làm và dữ liệu dựng (mục Data & fixture). Khung chung: [Đề bài](https://github.com/VinUni-AI20k/K5-L3-Day05-AI-Product-UX-Autonomy/blob/main/01-challenge-brief.md); các bước: [Hướng dẫn](https://github.com/VinUni-AI20k/K5-L3-Day05-AI-Product-UX-Autonomy/blob/main/02-guide.md).
 
 **Sản phẩm nền.** Traveloka là ứng dụng đặt vé máy bay, khách sạn phổ biến ở Việt Nam. Trong **Đặt chỗ của tôi** có tab **Hoàn tiền & Đổi lịch**: Easy Reschedule để đổi chuyến, và yêu cầu hoàn tiền. Hãng bay (ví dụ Vietnam Airlines) có chính sách riêng khi chuyến bị chậm, huỷ.
 
@@ -81,13 +83,13 @@ Nhóm tự tìm hiểu thêm sản phẩm thật nếu muốn (đọc trang tr�
 - _"Chuyến bị huỷ rồi à? Vậy đổi giúp mình sang sáng mai nhé."_
 - _"Thôi huỷ hết đi, hoàn tiền cho mình."_
 
-**Deliverable.** Bài nộp theo `../03-spec-template.md` + prototype 1–2 màn hình cho lát cắt này (xem `../02-guide.md` §5).
+**Deliverable.** Bài nộp theo mẫu spec chính thức + prototype 1–2 màn hình cho lát cắt này (xem Hướng dẫn §5 tại liên kết đầu tài liệu).
 
 **Demo bắt buộc.** Prototype mẫu của giảng viên đã dùng ca "đổi sang sáng mai" — nhóm chọn ca khó khác. Bấm qua một ca **khách xác nhận mơ hồ, hoặc trợ lý vừa đổi nhầm**: khách thấy gì, hoàn tác thế nào, ai được báo. Rồi trả lời một **ca lạ** do TA, nhóm bạn hoặc giảng viên đưa tại chỗ.
 
 **Hard tests** _(chỗ dễ sai, nhóm nên có kịch bản cho các loại này)_: Khách nói "đổi đi" mà không rõ chuyến nào, cho ai · yêu cầu hoàn gửi rồi không huỷ được · hỏi bồi thường khi huỷ do thời tiết · trẻ nhỏ bay một mình · đổi tên người bay · khách báo trợ lý vừa đổi nhầm · tin tự xưng "nhân viên hãng" đòi bỏ qua quy định.
 
-**Rubric riêng (tham khảo)** — "một sản phẩm tốt nên làm gì" trong domain này. Dùng để tự soát, không phải đáp án. Chấm chung theo `../04-rubric.md`.
+**Rubric riêng (tham khảo)** — "một sản phẩm tốt nên làm gì" trong domain này. Dùng để tự soát, không phải đáp án. Chấm chung theo Rubric tại liên kết đầu tài liệu.
 
 1. Không đổi, không huỷ, không gửi hoàn khi khách chưa xác nhận rõ **chuyến nào, cho hành khách nào**.
 2. Trước khi gửi yêu cầu hoàn: nói rõ **gửi rồi không huỷ được**, tiền về đâu, mất bao lâu.
@@ -102,14 +104,234 @@ Nhóm tự tìm hiểu thêm sản phẩm thật nếu muốn (đọc trang tr�
 
 **An toàn & đạo đức.** Không hứa bồi thường khi chưa rõ lý do huỷ · không xin số thẻ, OTP · đổi tên người bay, trẻ bay một mình: chuyển nhân viên · dữ liệu trong bài là dựng; hãng "Bay Mẫu" là hãng dựng, khoá học không liên kết với Traveloka hay hãng bay nào.
 
+### 1.2. Những việc tính năng không làm
+
+> Ít nhất 3 việc ngoài phạm vi; mỗi việc có lý do. Prototype phải tuân theo phạm vi này.
+
+| STT | Việc không làm | Lý do |
+| --- | --- | --- |
+| 1 | Không tự đổi vé khi khách chưa xác nhận rõ chuyến và hành khách. | Tool `doi_chuyen_bay` dùng lần đổi miễn phí duy nhất; nếu AI đoán sai chuyến hoặc người bay, khách mất quyền đổi miễn phí và có thể không còn chỗ trên chuyến phù hợp. Vì vậy cần xác nhận rõ trước khi đổi. |
+| 2 | Không tự gửi yêu cầu hoàn vé. | Tool `gui_yeu_cau_hoan_ve` không cho huỷ yêu cầu đã gửi; hiểu nhầm ý khách có thể khiến khách mất chỗ và phải chờ tiền hoàn tới 90 ngày theo bối cảnh đề bài. Vì vậy AI không tự gửi chỉ dựa trên suy đoán ý định của khách. |
+| 3 | Không tự đổi tên hành khách hoặc xử lý trường hợp trẻ nhỏ bay một mình. | Bộ tool của track không có chức năng đổi tên hoặc xử lý trẻ bay một mình; đề bài yêu cầu chuyển các ca này cho nhân viên. Tự xử lý hoặc hứa đã xử lý sẽ vượt khả năng của hệ thống, có thể khiến khách tưởng vé đã hợp lệ và lỡ chuyến. |
+
 ## §2. Kịch bản rủi ro
+
+### 2.1. Bảng kịch bản
+
+> Ít nhất 8 kịch bản, phủ đủ 4 lớp, mỗi lớp ít nhất một: ① nguồn sự thật / AI bịa; ② tin nhắn mơ hồ, thiếu thông tin; ③ yêu cầu ngoài thẩm quyền; ④ sai gây mất tiền, sức khoẻ hoặc niềm tin ngay.
+>
+> Nhãn mức hại: nhẹ / sửa được / không chấp nhận được. Cột lỗi phải trỏ tới tool hoặc dữ liệu cụ thể của đề bài, kể cả thông tin dữ liệu không có. Nếu thay đổi fixture, ghi rõ thay đổi trong kịch bản.
+
+| Mã  | Tin người dùng / thay đổi fixture | Lớp | AI có thể sai thế nào + tool / dữ liệu làm căn cứ | Sản phẩm tốt nên làm gì | Nhãn mức hại |
+| --- | --------------------------------- | --- | ------------------------------------------------- | ----------------------- | ------------ |
+| KB1 |                                   |     |                                                   |                         |              |
+| KB2 |                                   |     |                                                   |                         |              |
+| KB3 |                                   |     |                                                   |                         |              |
+| KB4 |                                   |     |                                                   |                         |              |
+| KB5 |                                   |     |                                                   |                         |              |
+| KB6 |                                   |     |                                                   |                         |              |
+| KB7 |                                   |     |                                                   |                         |              |
+| KB8 |                                   |     |                                                   |                         |              |
+
+### 2.2. Chọn hai kịch bản có cái giá khi sai cao nhất
+
+| Lựa chọn                | Mã kịch bản | Ai chịu thiệt hại gì nếu AI sai | Vì sao đắt hơn các kịch bản còn lại / vì sao không chọn |
+| ----------------------- | ----------- | ------------------------------- | ------------------------------------------------------- |
+| Kịch bản đắt nhất A     |             |                                 |                                                         |
+| Kịch bản đắt nhất B     |             |                                 |                                                         |
+| Kịch bản suýt được chọn |             |                                 |                                                         |
 
 ## §3. Khi AI sai
 
+> Làm chi tiết cho cả hai kịch bản đã chọn ở §2.2. Các mã kịch bản và vị trí prototype cần nhất quán giữa các mục.
+
+### 3.1. Kịch bản đắt nhất A
+
+| Nội dung cần mô tả                                                               | Thiết kế của nhóm |
+| -------------------------------------------------------------------------------- | ----------------- |
+| Mã kịch bản ở §2                                                                 |                   |
+| Loại lỗi: hệ thống / người dùng / ngữ cảnh; lý do phân loại                      |                   |
+| Câu AI nói nguyên văn                                                            |                   |
+| Người dùng thấy gì ngoài câu chữ: bằng chứng, giới hạn, nút, trạng thái          |                   |
+| Người dùng làm gì tiếp; đường sửa / hoàn tác nếu có                              |                   |
+| Nếu người dùng không làm gì thì sao                                              |                   |
+| Ai được báo; sau bao lâu; người đó nhận thông tin gì                             |                   |
+| Các phương án đã cân nhắc: hỏi lại / trả lời kèm giới hạn / dừng và chuyển người |                   |
+| Phương án chọn và lý do theo cái giá khi sai                                     |                   |
+| Phương án bị loại và lý do                                                       |                   |
+| Vì sao cách nói và cách sửa phù hợp với loại lỗi                                 |                   |
+
+### 3.2. Kịch bản đắt nhất B
+
+| Nội dung cần mô tả                                                               | Thiết kế của nhóm |
+| -------------------------------------------------------------------------------- | ----------------- |
+| Mã kịch bản ở §2                                                                 |                   |
+| Loại lỗi: hệ thống / người dùng / ngữ cảnh; lý do phân loại                      |                   |
+| Câu AI nói nguyên văn                                                            |                   |
+| Người dùng thấy gì ngoài câu chữ: bằng chứng, giới hạn, nút, trạng thái          |                   |
+| Người dùng làm gì tiếp; đường sửa / hoàn tác nếu có                              |                   |
+| Nếu người dùng không làm gì thì sao                                              |                   |
+| Ai được báo; sau bao lâu; người đó nhận thông tin gì                             |                   |
+| Các phương án đã cân nhắc: hỏi lại / trả lời kèm giới hạn / dừng và chuyển người |                   |
+| Phương án chọn và lý do theo cái giá khi sai                                     |                   |
+| Phương án bị loại và lý do                                                       |                   |
+| Vì sao cách nói và cách sửa phù hợp với loại lỗi                                 |                   |
+
+### 3.3. Nguyên tắc HAX/PAIR áp dụng
+
+> Chọn 2–3 nguyên tắc; mỗi nguyên tắc phải trỏ tới câu chữ hoặc chi tiết cụ thể và vị trí trên prototype ở §5.
+
+| Nguyên tắc | Mã kịch bản | Câu chữ / chi tiết áp dụng cụ thể | Số chú thích trên ảnh prototype |
+| ---------- | ----------- | --------------------------------- | ------------------------------- |
+|            |             |                                   |                                 |
+|            |             |                                   |                                 |
+|            |             |                                   |                                 |
+
+### 3.4. Lỗi không thể cứu chỉ bằng sửa câu chữ
+
+- Lỗi và mã kịch bản liên quan:
+- Vì sao sửa câu chữ không đủ:
+- Cơ chế thiết kế để chặn hoặc khắc phục:
+- Bằng chứng trên prototype:
+
 ## §4. Mức tự chủ
+
+### 4.1. Mức tự chủ cho từng tool
+
+> Mỗi tool có một mức: tự làm / cần người duyệt / cấm. Với tool cần duyệt, ghi rõ người duyệt, thông tin họ thấy và cách xử lý khi quá hạn.
+
+| Tool                  | Mức nhóm chọn | Ai duyệt | Người duyệt thấy gì trước khi xác nhận | Quá hạn / không có người duyệt thì sao |
+| --------------------- | ------------- | -------- | -------------------------------------- | -------------------------------------- |
+| `tra_cuu_dat_cho`     |               |          |                                        |                                        |
+| `giu_cho_chuyen_moi`  |               |          |                                        |                                        |
+| `doi_chuyen_bay`      |               |          |                                        |                                        |
+| `gui_yeu_cau_hoan_ve` |               |          |                                        |                                        |
+| `chuyen_nhan_vien`    |               |          |                                        |                                        |
+
+### 4.2. Lập luận theo cái giá khi sai cho từng tool
+
+| Tool                  | Sai thì ai chịu gì | Đảo lại được không; ai sửa; mất bao lâu | Chờ người duyệt thì mất gì | Vì sao chọn mức ở §4.1; phương án đã cân nhắc và lý do loại |
+| --------------------- | ------------------ | --------------------------------------- | -------------------------- | ----------------------------------------------------------- |
+| `tra_cuu_dat_cho`     |                    |                                         |                            |                                                             |
+| `giu_cho_chuyen_moi`  |                    |                                         |                            |                                                             |
+| `doi_chuyen_bay`      |                    |                                         |                            |                                                             |
+| `gui_yeu_cau_hoan_ve` |                    |                                         |                            |                                                             |
+| `chuyen_nhan_vien`    |                    |                                         |                            |                                                             |
+
+### 4.3. Tool khó xếp mức nhất
+
+- Tool:
+
+| Thành viên       | Mức từng chọn | Lý do; cái giá của lựa chọn này; mã kịch bản ở §2 làm căn cứ |
+| ---------------- | ------------- | ------------------------------------------------------------ |
+| Nguyễn Minh Quân |               |                                                              |
+| Nguyễn Quốc Việt |               |                                                              |
+| Đàm Tuấn Linh    |               |                                                              |
+
+- Nhóm chốt mức nào:
+- Vì sao chốt như vậy; vì sao loại các mức còn lại:
+
+### 4.4. Thử mức tự chủ trên ba kịch bản
+
+> Thử trên hai kịch bản đắt nhất và một kịch bản bình thường. Ghi kết quả kiểm tra thực tế của thiết kế, chưa đánh dấu đạt khi chưa thử.
+
+| Ca kiểm tra | Mã kịch bản | AI làm gì; người dùng thấy gì | Cái sai có bị chặn không; bằng chứng | Còn làm khi lẽ ra phải hỏi không | Người dùng có phải chờ vô ích không |
+| ----------- | ----------- | ----------------------------- | ------------------------------------ | -------------------------------- | ----------------------------------- |
+| Đắt nhất A  |             |                               |                                      |                                  |                                     |
+| Đắt nhất B  |             |                               |                                      |                                  |                                     |
+| Bình thường |             |                               |                                      |                                  |                                     |
+
+### 4.5. Luật bổ sung hoặc tool tách bước, nếu có
+
+- Luật / tool thêm hoặc tách; các bước và mức tự chủ tương ứng:
+- Vì sao cần; mã kịch bản được chặn nhờ thay đổi này:
+
+### 4.6. Mức tự chủ thay đổi lời hứa với người dùng
+
+- Tool và mức tự chủ liên quan:
+- Lời hứa trước khi chốt mức:
+- Lời hứa sau khi chốt mức:
+- Vì sao cần thay đổi lời hứa:
 
 ## §5. Prototype
 
+### 5.1. Thông tin prototype
+
+- Link hoặc đường dẫn file:
+- Công cụ dựng:
+- Phần nào mock / mô phỏng:
+- Có lời gọi AI thật không; nếu có, bằng chứng log / ảnh trong `prototype/`:
+- Mã kịch bản dùng cho ca khó:
+
+> Yêu cầu T3: 1–2 màn hình cho ca khách xác nhận mơ hồ hoặc trợ lý vừa đổi nhầm; chọn ca khó khác ca mẫu “đổi sang sáng mai”. Cần bấm được từ đầu tới cuối và thấy ít nhất hai mức tự chủ. Chỉ dùng dữ liệu dựng; không đưa API key vào bài nộp.
+
+### 5.2. Ảnh và chú thích
+
+- Đường dẫn ảnh màn hình 1 có đánh số:
+- Đường dẫn ảnh màn hình 2 có đánh số, nếu có:
+
+| Số chú thích | Thể hiện gì trên màn hình | Nguyên tắc HAX/PAIR ở §3.3 | Tool và mức tự chủ ở §4 |
+| ------------ | ------------------------- | -------------------------- | ----------------------- |
+|              |                           |                            |                         |
+|              |                           |                            |                         |
+|              |                           |                            |                         |
+
+### 5.3. Lập luận về cách thể hiện
+
+| Quyết định                               | Các phương án đã cân nhắc | Phương án chọn và lý do | Phương án loại và lý do | Vị trí trên prototype |
+| ---------------------------------------- | ------------------------- | ----------------------- | ----------------------- | --------------------- |
+| Hiển thị độ chắc / bằng chứng AI dựa vào |                           |                         |                         |                       |
+| Hiển thị và điều khiển mức tự chủ        |                           |                         |                         |                       |
+
+### 5.4. Đường đi và bằng chứng tương tác
+
+| Đường đi cần kiểm tra       | Mã kịch bản | Các bước bấm; trạng thái / kết quả; đường dẫn bằng chứng |
+| --------------------------- | ----------- | -------------------------------------------------------- |
+| Luồng bình thường           |             |                                                          |
+| AI không chắc / cần hỏi lại |             |                                                          |
+| AI sai / không có căn cứ    |             |                                                          |
+| Người dùng sửa AI           |             |                                                          |
+
+> Đối chiếu §4: việc tự làm có đường hoàn tác phù hợp; việc cần duyệt có bước xác nhận; có đường chuyển nhân viên; việc cấm không có nút thực hiện.
+
 ## §6. Tốt là gì
 
+> Phần nhẹ, có thể bỏ nếu thiếu giờ theo đề bài. Nếu làm, cần đúng 3 tiêu chí Pass/Fail chấm được và chấm thử trên cả hai kịch bản đắt nhất.
+
+### 6.1. Ba tiêu chí Pass/Fail
+
+| Mã  | Tiêu chí | Điều kiện Pass | Điều kiện Fail | Cách kiểm tra / bằng chứng cần xem |
+| --- | -------- | -------------- | -------------- | ---------------------------------- |
+| TC1 |          |                |                |                                    |
+| TC2 |          |                |                |                                    |
+| TC3 |          |                |                |                                    |
+
+### 6.2. Kết quả chấm thử
+
+| Kịch bản   | Mã kịch bản ở §2 | TC1: Pass/Fail | TC2: Pass/Fail | TC3: Pass/Fail | Bằng chứng; lỗi còn lại |
+| ---------- | ---------------- | -------------- | -------------- | -------------- | ----------------------- |
+| Đắt nhất A |                  |                |                |                |                         |
+| Đắt nhất B |                  |                |                |                |                         |
+
 ## §7. Demo
+
+### 7.1. Kịch bản và phân công trình bày
+
+- Ca khó dùng để demo; mã kịch bản ở §2:
+- Trình tự bấm từ đầu tới cuối:
+- Quyết định về mức tự chủ và cái giá khi sai cần giải thích:
+
+| Thành viên       | Phần trình bày / thao tác |
+| ---------------- | ------------------------- |
+| Nguyễn Minh Quân |                           |
+| Nguyễn Quốc Việt |                           |
+| Đàm Tuấn Linh    |                           |
+
+### 7.2. Ca lạ nhận tại buổi demo
+
+> Chỉ ghi sau khi nhận và xử lý ca lạ; không điền trước kết quả.
+
+- Tin nhắn / tình huống người xem đưa:
+- Prototype đã làm gì; tool và mức tự chủ tương ứng:
+- Kết quả; bằng chứng quan sát:
+- Nhóm có đổi ý hoặc sửa thiết kế sau ca này không; nếu có, sửa gì và vì sao:
