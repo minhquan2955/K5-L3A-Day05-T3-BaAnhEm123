@@ -145,55 +145,55 @@ Nhóm tự tìm hiểu thêm sản phẩm thật nếu muốn (đọc trang tr�
 
 > Làm chi tiết cho cả hai kịch bản đã chọn ở §2.2. Các mã kịch bản và vị trí prototype cần nhất quán giữa các mục.
 
-### 3.1. Kịch bản đắt nhất A
+## §3. Khi AI sai
 
-| Nội dung cần mô tả                                                               | Thiết kế của nhóm |
-| -------------------------------------------------------------------------------- | ----------------- |
-| Mã kịch bản ở §2                                                                 |                   |
-| Loại lỗi: hệ thống / người dùng / ngữ cảnh; lý do phân loại                      |                   |
-| Câu AI nói nguyên văn                                                            |                   |
-| Người dùng thấy gì ngoài câu chữ: bằng chứng, giới hạn, nút, trạng thái          |                   |
-| Người dùng làm gì tiếp; đường sửa / hoàn tác nếu có                              |                   |
-| Nếu người dùng không làm gì thì sao                                              |                   |
-| Ai được báo; sau bao lâu; người đó nhận thông tin gì                             |                   |
-| Các phương án đã cân nhắc: hỏi lại / trả lời kèm giới hạn / dừng và chuyển người |                   |
-| Phương án chọn và lý do theo cái giá khi sai                                     |                   |
-| Phương án bị loại và lý do                                                       |                   |
-| Vì sao cách nói và cách sửa phù hợp với loại lỗi                                 |                   |
+### 3.1. Kịch bản đắt nhất A — #4: Gửi yêu cầu hoàn vé khi chưa xác nhận rõ
 
-### 3.2. Kịch bản đắt nhất B
+| Nội dung cần mô tả | Thiết kế của nhóm |
+|---|---|
+| Mã kịch bản ở §2 | **#4** |
+| Loại lỗi: hệ thống / người dùng / ngữ cảnh; lý do phân loại | **Lỗi người dùng và ngữ cảnh.** Câu “Huỷ hết vé, hoàn tiền cho mình” chưa nói rõ hành khách nào và khách có thể đang căng thẳng sau khi chuyến bay bị huỷ. Nếu AI tự gọi `gui_yeu_cau_hoan_ve`, yêu cầu đã gửi sẽ không thể huỷ. |
+| Câu AI nói nguyên văn | “Mình chưa gửi yêu cầu hoàn. Theo dữ liệu đặt chỗ, chuyến BM 213 bị huỷ do thời tiết. Bạn có thể đổi miễn phí một lần trong 48 giờ hoặc yêu cầu hoàn toàn bộ. Yêu cầu hoàn đã gửi thì không huỷ được; thời gian xử lý có thể tới 90 ngày và tiền hoàn về phương thức thanh toán gốc, một số trường hợp có thể là voucher. Bạn muốn hoàn cho cả Nguyễn Minh An và Nguyễn Gia Bình không? Mình chỉ gửi sau khi bạn xác nhận lần cuối.” |
+| Người dùng thấy gì ngoài câu chữ: bằng chứng, giới hạn, nút, trạng thái | Người dùng thấy mã đặt chỗ `TRV-7Q2K`, lý do huỷ do thời tiết, hai tên hành khách, lựa chọn đổi vé hoặc hoàn vé, thời gian xử lý, phương thức hoàn và cảnh báo “Đã gửi thì không thể huỷ”. Nút **Gửi yêu cầu hoàn** bị khoá cho tới khi người dùng xác nhận rõ. |
+| Người dùng làm gì tiếp; đường sửa / hoàn tác nếu có | Người dùng chọn hành khách cần hoàn, đọc cảnh báo và bấm xác nhận lần cuối. Nếu đổi ý, bấm **Quay lại đổi chuyến** hoặc đóng hộp thoại. Trước khi gửi thì có thể huỷ thao tác; sau khi gửi không có hoàn tác. |
+| Nếu người dùng không làm gì thì sao | Yêu cầu hoàn chưa được gửi. Vé vẫn giữ nguyên trạng thái hiện tại và hệ thống không tự thực hiện thêm hành động. |
+| Ai được báo; sau bao lâu; người đó nhận thông tin gì | Nếu khách đã gửi nhầm, tranh chấp quyền hoàn hoặc cần giải thích trường hợp hoàn bằng voucher, hệ thống chuyển nhân viên hỗ trợ. Nhân viên nhận mã đặt chỗ, danh sách hành khách, lịch sử hội thoại và trạng thái yêu cầu. |
+| Các phương án đã cân nhắc | 1. Gửi hoàn ngay theo câu “huỷ hết”. 2. Từ chối yêu cầu hoàn. 3. Cảnh báo hậu quả và hỏi lại hành khách trước khi gửi. |
+| Phương án chọn và lý do theo cái giá khi sai | Chọn phương án 3. Yêu cầu hoàn không thể huỷ và có thể mất tới 90 ngày, nên cần xác nhận rõ hành khách và hậu quả trước khi gọi tool. |
+| Phương án bị loại và lý do | Gửi ngay bị loại vì AI có thể hiểu sai “huỷ hết”. Từ chối hoàn bị loại vì hoàn vé vẫn là lựa chọn hợp lệ của khách theo chính sách trong fixture. |
+| Vì sao cách nói và cách sửa phù hợp với loại lỗi | Vì lỗi xuất phát từ ý định chưa rõ và bối cảnh khách đang lo lắng, AI cần nói cụ thể hậu quả, hỏi lại đối tượng và dừng trước hành động không thể đảo ngược. |
 
-| Nội dung cần mô tả                                                               | Thiết kế của nhóm |
-| -------------------------------------------------------------------------------- | ----------------- |
-| Mã kịch bản ở §2                                                                 |                   |
-| Loại lỗi: hệ thống / người dùng / ngữ cảnh; lý do phân loại                      |                   |
-| Câu AI nói nguyên văn                                                            |                   |
-| Người dùng thấy gì ngoài câu chữ: bằng chứng, giới hạn, nút, trạng thái          |                   |
-| Người dùng làm gì tiếp; đường sửa / hoàn tác nếu có                              |                   |
-| Nếu người dùng không làm gì thì sao                                              |                   |
-| Ai được báo; sau bao lâu; người đó nhận thông tin gì                             |                   |
-| Các phương án đã cân nhắc: hỏi lại / trả lời kèm giới hạn / dừng và chuyển người |                   |
-| Phương án chọn và lý do theo cái giá khi sai                                     |                   |
-| Phương án bị loại và lý do                                                       |                   |
-| Vì sao cách nói và cách sửa phù hợp với loại lỗi                                 |                   |
+### 3.2. Kịch bản đắt nhất B — #3: Xác nhận mơ hồ trước khi đổi chuyến
+
+| Nội dung cần mô tả | Thiết kế của nhóm |
+|---|---|
+| Mã kịch bản ở §2 | **#3** |
+| Loại lỗi: hệ thống / người dùng / ngữ cảnh; lý do phân loại | **Lỗi người dùng và ngữ cảnh.** Sau khi AI đưa nhiều lựa chọn, khách nói “Ừ, chuyến đó đi” nhưng không xác định BM 201 hay BM 205, cũng chưa nói rõ đổi cho ai. Nếu AI tự gọi `doi_chuyen_bay`, khách có thể mất lần đổi miễn phí. |
+| Câu AI nói nguyên văn | “Mình muốn chắc chắn trước khi đổi vé: bạn chọn chuyến **BM 201 lúc 07:00 ngày 13/11** hay **BM 205 lúc 09:30 ngày 13/11**? Bạn muốn đổi cho cả Nguyễn Minh An và Nguyễn Gia Bình đúng không? Mình chưa đổi vé.” |
+| Người dùng thấy gì ngoài câu chữ: bằng chứng, giới hạn, nút, trạng thái | Người dùng thấy hai thẻ chuyến riêng biệt với mã chuyến, ngày giờ, số chỗ còn lại và danh sách hành khách. Trạng thái hiển thị **Chưa đổi vé**. Nút **Đổi vé** chỉ xuất hiện sau khi chọn đúng một chuyến và hành khách. |
+| Người dùng làm gì tiếp; đường sửa / hoàn tác nếu có | Người dùng chọn một chuyến, kiểm tra danh sách hành khách rồi bấm **Giữ chỗ 20 phút**. Sau khi giữ, người dùng có thể quay lại chọn phương án khác. Chỉ sau xác nhận cuối mới được bấm **Đổi vé**. |
+| Nếu người dùng không làm gì thì sao | Nếu chưa giữ chỗ, không có thay đổi nào. Nếu đã giữ, chỗ tự nhả sau 20 phút và vé cũ chưa bị đổi. |
+| Ai được báo; sau bao lâu; người đó nhận thông tin gì | Nếu khách báo AI vừa đổi nhầm hoặc không thể xác định chuyến phù hợp, hệ thống chuyển nhân viên. Nhân viên nhận mã đặt chỗ, chuyến hiện tại, lựa chọn khách đã xem và lịch sử thao tác. |
+| Các phương án đã cân nhắc | 1. Đoán “chuyến đó” là chuyến được hiển thị đầu tiên và đổi ngay. 2. Chuyển nhân viên ngay. 3. Hỏi lại, hiển thị lại các chuyến và yêu cầu xác nhận rõ. |
+| Phương án chọn và lý do theo cái giá khi sai | Chọn phương án 3. Việc đổi chuyến dùng lần đổi miễn phí duy nhất; một bước hỏi lại ngắn giúp chặn thao tác sai, trong khi khách vẫn có thể giữ chỗ để không mất chuyến. |
+| Phương án bị loại và lý do | Đoán và đổi ngay bị loại vì biến câu nói mơ hồ thành hành động khó đảo ngược. Chuyển nhân viên ngay bị loại vì khách có thể tự chọn sau khi hệ thống hiển thị đủ thông tin, và chờ lâu có thể làm chuyến hết chỗ. |
+| Vì sao cách nói và cách sửa phù hợp với loại lỗi | Vì lỗi nằm ở thông tin chưa đủ rõ, AI không nên giải thích dài hoặc tự suy đoán. AI cần hỏi đúng lựa chọn còn thiếu, hiển thị bằng chứng và giữ nguyên vé cũ cho tới khi khách xác nhận. |
 
 ### 3.3. Nguyên tắc HAX/PAIR áp dụng
 
-> Chọn 2–3 nguyên tắc; mỗi nguyên tắc phải trỏ tới câu chữ hoặc chi tiết cụ thể và vị trí trên prototype ở §5.
-
 | Nguyên tắc | Mã kịch bản | Câu chữ / chi tiết áp dụng cụ thể | Số chú thích trên ảnh prototype |
-| ---------- | ----------- | --------------------------------- | ------------------------------- |
-|            |             |                                   |                                 |
-|            |             |                                   |                                 |
-|            |             |                                   |                                 |
+|---|---|---|---|
+| **G10 — Thu hẹp phạm vi khi nghi ngờ** | #4 | AI hỏi “Bạn muốn hoàn cho cả hai hành khách không?” và không gọi `gui_yeu_cau_hoan_ve` khi chưa có xác nhận cuối. | [điền số] |
+| **G10 — Thu hẹp phạm vi khi nghi ngờ** | #3 | AI hỏi khách chọn BM 201 hay BM 205 thay vì đoán “chuyến đó”. | [điền số] |
+| **G2 — Làm rõ AI làm tốt đến đâu** | #3 | Thẻ chuyến hiển thị mã chuyến, giờ bay, số chỗ và trạng thái “Chưa đổi vé”. | [điền số] |
+| **G8 — Gạt bỏ dễ dàng** | #3, #4 | Có nút quay lại hoặc huỷ trước khi đổi vé/gửi hoàn; chưa xác nhận thì không gọi tool không thể đảo ngược. | [điền số] |
 
 ### 3.4. Lỗi không thể cứu chỉ bằng sửa câu chữ
 
-- Lỗi và mã kịch bản liên quan:
-- Vì sao sửa câu chữ không đủ:
-- Cơ chế thiết kế để chặn hoặc khắc phục:
-- Bằng chứng trên prototype:
-
+- **Lỗi và mã kịch bản liên quan:** Gửi yêu cầu hoàn nhầm ở **#4** hoặc đổi nhầm chuyến ở **#3**.
+- **Vì sao sửa câu chữ không đủ:** Một cảnh báo bằng văn bản có thể bị bỏ qua; sau khi gọi tool, yêu cầu hoàn không huỷ được hoặc lần đổi miễn phí đã bị sử dụng.
+- **Cơ chế thiết kế để chặn hoặc khắc phục:** Tách quy trình thành các bước: chọn hành khách/chuyến → hiển thị hậu quả → xác nhận cuối → mới gọi tool. Với đổi chuyến, giữ chỗ 20 phút trước khi đổi. Với hoàn vé, nút gửi bị khoá cho tới khi xác nhận rõ.
+- **Bằng chứng trên prototype:** [điền số chú thích của màn hình xác nhận cuối, nút quay lại và trạng thái “Chưa gửi” / “Chưa đổi vé”].
 ## §4. Mức tự chủ
 
 ### 4.1. Mức tự chủ cho từng tool
