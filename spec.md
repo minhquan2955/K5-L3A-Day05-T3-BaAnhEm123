@@ -11,7 +11,11 @@ Track: T3
 | Đàm Tuấn Linh    | 2A202603624 | ...         |
 
 ## §1. Lát cắt & phạm vi
-
+- Lát cắt: Trong mục Đặt chỗ của tôi, hành khách vừa nhận tin chuyến bay bị huỷ và nhắn hỏi. AI quyết định đề xuất, giữ chỗ chuyến thay thế, hỏi lại, đổi vé hoặc chuyển nhân viên, để khách tới nơi kịp mà không mất vé hay tiền vì một thao tác khó đảo ngược.
+- Không làm:  
+1. Không tự đổi vé khi khách chưa xác nhận rõ chuyến và hành khách, vì đổi vé dùng lần đổi miễn phí duy nhất.
+2. Không tự gửi yêu cầu hoàn vé, vì yêu cầu đã gửi thì không huỷ được.
+3. Không tự đổi tên hành khách hoặc xử lý trường hợp trẻ nhỏ bay một mình, vì track yêu cầu chuyển các ca này cho nhân viên.
 # T3 — Du lịch: trợ lý đổi chuyến khi chuyến bay bị huỷ
 
 > **Cách dùng:** đọc từ trên xuống trong chặng 1 (10 phút). Sản phẩm thật chỉ để **tham khảo** cách nó chạy hôm nay; nhóm **không** chat với sản phẩm thật. Đây là bài **thiết kế**: không chạy agent, không cần chatbot. Nhóm tự lường trước AI có thể sai ở đâu từ lát cắt, bộ việc AI có thể làm và dữ liệu dựng (mục Data & fixture). Khung chung: `../01-challenge-brief.md`; các bước: `../02-guide.md`.
